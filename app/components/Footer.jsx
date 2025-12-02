@@ -21,6 +21,7 @@ const footerLinks = {
     { name: 'Case Studies', href: '/work' },
     { name: 'Blog & Guides', href: '/resources' },
     { name: 'Pricing', href: '/pricing' },
+    { name: 'FAQ', href: '/faq' },
   ],
 };
 
@@ -74,7 +75,7 @@ export default function Footer() {
               <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center">
                 <Icon name="Zap" className="w-6 h-6 text-white" />
               </div>
-              <span className="text-xl font-bold text-white">App Guru</span>
+              <span className="text-xl font-bold text-white">Lock J Lab</span>
             </Link>
             <p className="text-gray-400 mb-6 max-w-sm">
               We build digital products that drive results. From strategy to launch, we are your partner for success.
@@ -153,7 +154,7 @@ export default function Footer() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-gray-500 text-sm">
-              &copy; {new Date().getFullYear()} App Guru. All rights reserved.
+              &copy; {new Date().getFullYear()} Lock J Lab. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               <Link href="/privacy" className="text-gray-500 hover:text-white text-sm transition-colors">

@@ -4,7 +4,7 @@ import PageHero from '../components/PageHero';
 import Icon from '../components/Icon';
 
 export const metadata = {
-  title: 'Pricing & Engagement Models | App Guru',
+  title: 'Pricing & Engagement Models | Lock J Lab',
   description: 'Flexible pricing and engagement models tailored to your project needs. From fixed-price projects to dedicated teams.',
 };
 

@@ -1,4 +1,4 @@
-# App Guru Website
+# Lock J Lab Website
 
 A modern Next.js 15 website for a digital product agency.
 

@@ -3,39 +3,27 @@
 // --- WORK DATA ---
 const allProjects = [
   {
-    title: 'PredictionStrike',
-    description: 'The world\'s first athlete stock exchange. +3637% increase in per-user sessions.',
-    image: 'https://placehold.co/300x200/1e293b/94a3b8?text=PredictionStrike',
+    title: 'Coinflow',
+    description: 'Professional cryptocurrency trading dashboard with real-time charts and instant trading.',
+    image: 'https://placehold.co/300x200/0d1117/10b981?text=Coinflow',
     href: '/work'
   },
   {
-    title: 'World Wildlife Fund',
-    description: 'The renowned international conservation org. 30% increase in site-generated purchases.',
-    image: 'https://placehold.co/300x200/1e293b/94a3b8?text=WWF',
+    title: 'MediBook',
+    description: 'Modern telehealth platform connecting patients with healthcare providers.',
+    image: 'https://placehold.co/300x200/f8fafc/3b82f6?text=MediBook',
     href: '/work'
   },
   {
-    title: 'Kabata',
-    description: 'An AI-powered dumbbell that\'s backed by top investors. Sold out its presale in 45 minutes.',
-    image: 'https://placehold.co/300x200/1e293b/94a3b8?text=Kabata',
+    title: 'Image Detail Specialists',
+    description: 'The nation\'s leading collision center staffing solution with 1,000+ reviews.',
+    image: 'https://placehold.co/300x200/1e293b/ef4444?text=IDS+Staffing',
     href: '/work'
   },
   {
-    title: 'TGS',
-    description: 'A leader in the energy data and intelligence industry. +425% increase in primary page views.',
-    image: 'https://placehold.co/300x200/1e293b/94a3b8?text=TGS',
-    href: '/work'
-  },
-  {
-    title: 'AngelFire',
-    description: 'Socially-immersive sports gaming app. 4.8/5 average rating and 1000\'s of downloads.',
-    image: 'https://placehold.co/300x200/1e293b/94a3b8?text=AngelFire',
-    href: '/work'
-  },
-  {
-    title: 'MedsPal',
-    description: 'A non-profit medical database partnering with WHO. +250% increase in site engagement.',
-    image: 'https://placehold.co/300x200/1e293b/94a3b8?text=MedsPal',
+    title: 'IDS Express Car Wash',
+    description: 'Membership-driven express car wash platform with easy subscription management.',
+    image: 'https://placehold.co/300x200/0891b2/ffffff?text=IDS+Express',
     href: '/work'
   },
 ];
@@ -124,7 +112,7 @@ export const resourcesData = {
   content: {
     'blog': [
       { title: 'How to Choose the Right AI Software Development Company in 2025', description: 'If you choose the wrong AI software development company, it can seriously derail your project...', image: 'https://placehold.co/300x150/1e293b/94a3b8?text=AI+Strategy', href: '/resources' },
-      { title: 'App Guru Expands UX and Accessibility Services to Empower Nonprofits', description: 'Los Angeles, California - May 28, 2025 - App Guru expands its services...', image: 'https://placehold.co/300x150/1e293b/94a3b8?text=UX+Expansion', href: '/resources' },
+      { title: 'Lock J Lab Expands UX and Accessibility Services to Empower Nonprofits', description: 'Los Angeles, California - May 28, 2025 - Lock J Lab expands its services...', image: 'https://placehold.co/300x150/1e293b/94a3b8?text=UX+Expansion', href: '/resources' },
       { title: 'The Complete Guide to UX Audits (And Why They Matter More Than Ever)', description: 'User experience is make-or-break. Whether you\'re battling user drop-off...', image: 'https://placehold.co/300x150/1e293b/94a3b8?text=UX+Audit', href: '/resources' },
     ],
     'guides': [
@@ -146,13 +134,13 @@ export const aboutData = {
   layout: 'grid',
   sidebar: [
     { id: 'company', name: 'Company', icon: 'Building2', href: '/about' },
-    { id: 'locations', name: 'Locations', icon: 'Globe', href: '/about' },
-    { id: 'faq', name: 'FAQ', icon: 'HelpCircle', href: '/about' },
+    { id: 'locations', name: 'Locations', icon: 'Globe', href: '/contact' },
+    { id: 'faq', name: 'FAQ', icon: 'HelpCircle', href: '/faq' },
   ],
   content: {
     'company': [
-      { title: 'About App Guru', description: 'For over a decade, we\'ve helped startups, nonprofits, and corporations build impactful products.', icon: 'Info', href: '/about' },
-      { title: 'Careers', description: 'Build the career you want with App Guru. Find fulfillment and create impact.', icon: 'Briefcase', href: '/careers' },
+      { title: 'About Lock J Lab', description: 'For over a decade, we\'ve helped startups, nonprofits, and corporations build impactful products.', icon: 'Info', href: '/about' },
+      { title: 'Careers', description: 'Build the career you want with Lock J Lab. Find fulfillment and create impact.', icon: 'Briefcase', href: '/careers' },
       { title: 'Press & Media', description: 'Catch up on our latest company news and announcements.', icon: 'Newspaper', href: '/resources' },
       { title: 'Pricing & Engagement Models', description: 'Tailored pricing for your needs. Custom-built products to help you scale.', icon: 'DollarSign', href: '/pricing' },
       { title: 'Our Process', description: 'We leverage product strategy, UX research, UI/UX design, and development seamlessly.', icon: 'Repeat', href: '/process' },
@@ -164,10 +152,10 @@ export const aboutData = {
       { title: 'Remote & Global', description: 'We utilize a global talent pool to deliver exceptional results around the clock.', icon: 'Globe', href: '/careers' },
     ],
     'faq': [
-      { title: 'How long does it take to build an MVP?', description: 'Typically, an MVP takes 3-6 months, depending on complexity and scope.', icon: 'Gauge', href: '/process' },
-      { title: 'What is your typical team structure?', description: 'We assign a PM, UX/UI Designer, Tech Lead, and 2-4 Developers.', icon: 'Building2', href: '/about' },
-      { title: 'Do you offer post-launch support?', description: 'Yes, we offer various support and maintenance packages.', icon: 'ShieldCheck', href: '/pricing' },
-      { title: 'What technologies do you specialize in?', description: 'We specialize in React, Node.js, Python, Swift, and Kotlin.', icon: 'Code', href: '/services/development' },
+      { title: 'How long does it take to build an MVP?', description: 'Typically, an MVP takes 3-6 months, depending on complexity and scope.', icon: 'Gauge', href: '/faq' },
+      { title: 'What is your typical team structure?', description: 'We assign a PM, UX/UI Designer, Tech Lead, and 2-4 Developers.', icon: 'Building2', href: '/faq' },
+      { title: 'Do you offer post-launch support?', description: 'Yes, we offer various support and maintenance packages.', icon: 'ShieldCheck', href: '/faq' },
+      { title: 'What technologies do you specialize in?', description: 'We specialize in React, Node.js, Python, Swift, and Kotlin.', icon: 'Code', href: '/faq' },
     ],
   },
   callouts: {

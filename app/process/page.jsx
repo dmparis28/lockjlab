@@ -4,8 +4,8 @@ import Icon from '../components/Icon';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Our Process | App Guru',
-  description: 'Discover how App Guru transforms ideas into successful digital products through our proven process.',
+  title: 'Our Process | Lock J Lab',
+  description: 'Discover how Lock J Lab transforms ideas into successful digital products through our proven process.',
 };
 
 const processSteps = [

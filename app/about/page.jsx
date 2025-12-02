@@ -4,8 +4,8 @@ import Icon from '../components/Icon';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'About Us | App Guru',
-  description: 'Learn about App Guru - a digital product agency helping startups and enterprises build impactful products.',
+  title: 'About Us | Lock J Lab',
+  description: 'Learn about Lock J Lab - a digital product agency helping startups and enterprises build impactful products.',
 };
 
 const stats = [
@@ -86,7 +86,7 @@ export default function AboutPage() {
   return (
     <div className="bg-[#0B0F19] min-h-screen">
       <PageHero
-        tag="About App Guru"
+        tag="About Lock J Lab"
         icon="Building2"
         title="Building Digital Products"
         titleHighlight="That Matter"
@@ -118,7 +118,7 @@ export default function AboutPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Our Story</h2>
               <div className="space-y-4 text-gray-400 text-lg">
                 <p>
-                  App Guru was founded with a simple mission: help ambitious teams build products that make a difference. What started as a small design studio has grown into a full-service digital product agency.
+                  Lock J Lab was founded with a simple mission: help ambitious teams build products that make a difference. What started as a small design studio has grown into a full-service digital product agency.
                 </p>
                 <p>
                   Today, we bring together strategists, designers, and engineers who share a passion for solving complex problems. We've helped launch over 200 products, from early-stage MVPs to enterprise platforms serving millions.

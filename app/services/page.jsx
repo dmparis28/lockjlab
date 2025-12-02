@@ -4,8 +4,8 @@ import PageHero from '../components/PageHero';
 import Icon from '../components/Icon';
 
 export const metadata = {
-  title: 'Our Services | App Guru',
-  description: 'Explore App Guru\'s full range of digital product services - from strategy and design to development and launch.',
+  title: 'Our Services | Lock J Lab',
+  description: 'Explore Lock J Lab\'s full range of digital product services - from strategy and design to development and launch.',
 };
 
 const services = [

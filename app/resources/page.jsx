@@ -4,7 +4,7 @@ import PageHero from '../components/PageHero';
 import Icon from '../components/Icon';
 
 export const metadata = {
-  title: 'Resources | App Guru',
+  title: 'Resources | Lock J Lab',
   description: 'Explore our blog, guides, templates, and tools to help you build better digital products.',
 };
 
@@ -26,7 +26,7 @@ const blogPosts = [
     readTime: '8 min read',
   },
   {
-    title: 'App Guru Expands UX and Accessibility Services',
+    title: 'Lock J Lab Expands UX and Accessibility Services',
     excerpt: 'Announcing our expanded services to empower nonprofits with better digital experiences.',
     image: 'https://placehold.co/600x400/1e293b/94a3b8?text=Company+News',
     category: 'News',
@@ -64,28 +64,24 @@ const blogPosts = [
 
 const templates = [
   {
-    title: 'Product Requirements Document (PRD) Template',
-    description: 'Kickstart your project with our proven PRD template.',
+    title: 'PRD Template',
+    description: 'Product Requirements Document template to kickstart your project planning.',
     icon: 'FileCode',
-    type: 'Google Docs',
   },
   {
     title: 'Competitor Analysis Spreadsheet',
-    description: 'A structured spreadsheet to analyze your competitors.',
+    description: 'A structured spreadsheet to analyze and track your competitors.',
     icon: 'BarChart3',
-    type: 'Google Sheets',
   },
   {
     title: 'UX Audit Checklist',
-    description: 'A comprehensive checklist to evaluate user experience.',
+    description: 'Comprehensive checklist to evaluate user experience across your product.',
     icon: 'CheckCircle',
-    type: 'PDF',
   },
   {
     title: 'Sprint Planning Template',
-    description: 'Organize your agile sprints effectively.',
+    description: 'Agile sprint planning template for efficient project management.',
     icon: 'Calendar',
-    type: 'Notion',
   },
 ];
 
@@ -97,16 +93,16 @@ export default function ResourcesPage() {
       <PageHero
         tag="Resources"
         icon="BookOpen"
-        title="Insights, Guides &"
-        titleHighlight="Free Resources"
-        description="Learn from our expertise. Explore articles, guides, and templates to help you build better digital products."
+        title="Insights &"
+        titleHighlight="Resources"
+        description="Explore our blog, guides, templates, and tools to help you build better digital products."
         size="lg"
       />
 
       {/* Featured Post */}
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="group relative rounded-2xl overflow-hidden bg-[#111827] border border-white/10 hover:border-sky-500/30 transition-colors">
+          <article className="group rounded-2xl overflow-hidden bg-gradient-to-br from-sky-600/10 to-sky-900/5 border border-sky-500/20 hover:border-sky-500/40 transition-all">
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="aspect-video lg:aspect-auto overflow-hidden">
                 <img
@@ -120,9 +116,9 @@ export default function ResourcesPage() {
                   <span className="px-3 py-1 rounded-full bg-sky-500/20 text-sky-400 text-sm font-medium">
                     {featuredPost.category}
                   </span>
-                  <span className="text-gray-400 text-sm">{featuredPost.readTime}</span>
+                  <span className="text-gray-500 text-sm">{featuredPost.readTime}</span>
                 </div>
-                <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-sky-400 transition-colors">
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-sky-400 transition-colors">
                   {featuredPost.title}
                 </h2>
                 <p className="text-gray-400 mb-6">{featuredPost.excerpt}</p>
@@ -132,21 +128,21 @@ export default function ResourcesPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </section>
 
       {/* Category Filter */}
       <section className="pb-8">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-2">
             {categories.map((category, index) => (
               <button
                 key={category}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   index === 0
                     ? 'bg-sky-500 text-white'
-                    : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10'
+                    : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
                 }`}
               >
                 {category}
@@ -157,19 +153,19 @@ export default function ResourcesPage() {
       </section>
 
       {/* Blog Posts Grid */}
-      <section className="py-8 md:py-16">
+      <section className="py-8 md:py-12">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
+            {blogPosts.map((post, index) => (
               <article
-                key={post.title}
-                className="group rounded-xl overflow-hidden bg-[#111827] border border-white/10 hover:border-sky-500/30 transition-colors"
+                key={index}
+                className="group rounded-xl overflow-hidden bg-[#111827] border border-white/10 hover:border-white/20 transition-all"
               >
                 <div className="aspect-video overflow-hidden">
                   <img
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="p-6">
@@ -191,26 +187,28 @@ export default function ResourcesPage() {
       </section>
 
       {/* Templates Section */}
-      <section className="py-16 md:py-24 border-t border-white/10">
+      <section className="py-12 md:py-16 border-t border-white/10">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">Free Templates & Tools</h2>
-            <p className="text-gray-400 text-lg">Download our battle-tested templates to accelerate your projects.</p>
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-2">Free Templates & Tools</h2>
+              <p className="text-gray-400">Download our free resources to help you get started faster.</p>
+            </div>
           </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {templates.map((template) => (
+            {templates.map((template, index) => (
               <div
-                key={template.title}
-                className="group p-6 rounded-xl bg-[#111827] border border-white/10 hover:border-sky-500/30 transition-colors cursor-pointer"
+                key={index}
+                className="group p-6 rounded-xl bg-white/5 border border-white/10 hover:border-sky-500/30 hover:bg-white/10 transition-all cursor-pointer"
               >
-                <div className="p-3 rounded-lg bg-sky-500/10 border border-sky-500/20 w-fit mb-4">
+                <div className="w-12 h-12 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center mb-4">
                   <Icon name={template.icon} className="w-6 h-6 text-sky-400" />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-sky-400 transition-colors">
                   {template.title}
                 </h3>
-                <p className="text-gray-400 text-sm mb-4">{template.description}</p>
-                <span className="text-xs text-gray-500">{template.type}</span>
+                <p className="text-gray-400 text-sm">{template.description}</p>
               </div>
             ))}
           </div>
@@ -220,21 +218,31 @@ export default function ResourcesPage() {
       {/* Newsletter CTA */}
       <section className="py-16 md:py-24 border-t border-white/10">
         <div className="container mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center">
-          <Icon name="Mail" className="w-12 h-12 text-sky-400 mx-auto mb-6" />
-          <h2 className="text-3xl font-bold text-white mb-4">Stay Updated</h2>
+          <div className="w-16 h-16 rounded-full bg-sky-500/10 border border-sky-500/20 flex items-center justify-center mx-auto mb-6">
+            <Icon name="Send" className="w-8 h-8 text-sky-400" />
+          </div>
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Stay Updated
+          </h2>
           <p className="text-gray-400 mb-8">
-            Get the latest insights, guides, and resources delivered to your inbox.
+            Get the latest insights on product design, development, and strategy delivered to your inbox.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-500"
+              className="flex-1 px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent"
             />
-            <button className="px-6 py-3 rounded-lg bg-gradient-to-r from-sky-600 to-blue-700 text-white font-semibold hover:shadow-lg hover:shadow-sky-500/30 transition-all">
+            <button
+              type="submit"
+              className="px-6 py-3 rounded-lg bg-sky-500 hover:bg-sky-600 text-white font-semibold transition-colors"
+            >
               Subscribe
             </button>
-          </div>
+          </form>
+          <p className="text-gray-500 text-sm mt-4">
+            No spam. Unsubscribe anytime.
+          </p>
         </div>
       </section>
     </div>

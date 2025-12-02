@@ -4,7 +4,7 @@ import PageHero from '../components/PageHero';
 import Icon from '../components/Icon';
 
 export const metadata = {
-  title: 'Careers | App Guru',
+  title: 'Careers | Lock J Lab',
   description: 'Join our team of talented designers, developers, and strategists. Build meaningful products and grow your career.',
 };
 

@@ -61,13 +61,129 @@ export default function Hero() {
               </Link>
             </div>
 
-            {/* Trust indicators */}
+            {/* Awards Section */}
             <div className="mt-12 pt-8 border-t border-white/10 animate-fade-in animation-delay-500">
-              <p className="text-gray-500 text-sm mb-4">Trusted by innovative companies</p>
-              <div className="flex items-center justify-center lg:justify-start gap-8 opacity-50">
-                <span className="text-white font-semibold">TechCrunch</span>
-                <span className="text-white font-semibold">Forbes</span>
-                <span className="text-white font-semibold">Wired</span>
+              <p className="text-gray-500 text-sm mb-6">Award-Winning Digital Agency</p>
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6">
+                {/* Clutch Global Badge */}
+                <div className="group relative hover:scale-105 transition-transform cursor-pointer">
+                  <div className="w-28 h-32 flex flex-col items-center justify-center">
+                    <svg viewBox="0 0 100 120" className="w-full h-full drop-shadow-xl">
+                      <defs>
+                        <linearGradient id="clutchGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="0%" stopColor="#3b5998"/>
+                          <stop offset="100%" stopColor="#1a365d"/>
+                        </linearGradient>
+                        <filter id="shadow1" x="-20%" y="-20%" width="140%" height="140%">
+                          <feDropShadow dx="0" dy="3" stdDeviation="3" floodOpacity="0.5"/>
+                        </filter>
+                      </defs>
+                      <polygon points="50,6 90,22 90,74 50,106 10,74 10,22" fill="url(#clutchGrad)" filter="url(#shadow1)"/>
+                      <polygon points="50,12 84,26 84,70 50,98 16,70 16,26" fill="#1e3a5f"/>
+                      <text x="50" y="38" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold" fontFamily="Arial, sans-serif">Clutch</text>
+                      <rect x="18" y="46" width="64" height="18" fill="#14b8a6" rx="3"/>
+                      <text x="50" y="59" textAnchor="middle" fill="white" fontSize="11" fontWeight="bold" fontFamily="Arial, sans-serif">GLOBAL</text>
+                      <text x="50" y="78" textAnchor="middle" fill="white" fontSize="10" fontFamily="Arial, sans-serif">Spring</text>
+                      <text x="50" y="92" textAnchor="middle" fill="#94a3b8" fontSize="12" fontWeight="bold" fontFamily="Arial, sans-serif">2025</text>
+                    </svg>
+                  </div>
+                </div>
+
+                {/* DesignRush 5-Star Badge */}
+                <div className="group relative hover:scale-105 transition-transform cursor-pointer">
+                  <div className="w-28 h-32 flex flex-col items-center justify-center">
+                    <svg viewBox="0 0 100 120" className="w-full h-full drop-shadow-xl">
+                      <defs>
+                        <linearGradient id="drGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="0%" stopColor="#4b5563"/>
+                          <stop offset="100%" stopColor="#1f2937"/>
+                        </linearGradient>
+                      </defs>
+                      <polygon points="50,6 90,22 90,74 50,106 10,74 10,22" fill="url(#drGrad)" filter="url(#shadow1)"/>
+                      <polygon points="50,12 84,26 84,70 50,98 16,70 16,26" fill="#111827"/>
+                      <text x="50" y="34" textAnchor="middle" fill="white" fontSize="18" fontWeight="bold" fontFamily="Arial, sans-serif">5-STAR</text>
+                      <text x="50" y="48" textAnchor="middle" fill="#9ca3af" fontSize="9" fontFamily="Arial, sans-serif">AGENCY</text>
+                      <g transform="translate(22, 54)">
+                        <polygon points="6,0 7.5,4.5 12,4.8 8.5,7.8 9.5,12 6,9.5 2.5,12 3.5,7.8 0,4.8 4.5,4.5" fill="#fbbf24"/>
+                        <polygon points="6,0 7.5,4.5 12,4.8 8.5,7.8 9.5,12 6,9.5 2.5,12 3.5,7.8 0,4.8 4.5,4.5" fill="#fbbf24" transform="translate(11,0)"/>
+                        <polygon points="6,0 7.5,4.5 12,4.8 8.5,7.8 9.5,12 6,9.5 2.5,12 3.5,7.8 0,4.8 4.5,4.5" fill="#fbbf24" transform="translate(22,0)"/>
+                        <polygon points="6,0 7.5,4.5 12,4.8 8.5,7.8 9.5,12 6,9.5 2.5,12 3.5,7.8 0,4.8 4.5,4.5" fill="#fbbf24" transform="translate(33,0)"/>
+                        <polygon points="6,0 7.5,4.5 12,4.8 8.5,7.8 9.5,12 6,9.5 2.5,12 3.5,7.8 0,4.8 4.5,4.5" fill="#fbbf24" transform="translate(44,0)"/>
+                      </g>
+                      <text x="50" y="82" textAnchor="middle" fill="#6b7280" fontSize="8" fontFamily="Arial, sans-serif">DESIGNRUSH.com</text>
+                      <text x="50" y="94" textAnchor="middle" fill="#9ca3af" fontSize="11" fontFamily="Arial, sans-serif">2024</text>
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Inc 5000 Badge */}
+                <div className="group relative hover:scale-105 transition-transform cursor-pointer">
+                  <div className="w-28 h-32 flex flex-col items-center justify-center">
+                    <svg viewBox="0 0 100 120" className="w-full h-full drop-shadow-xl">
+                      <circle cx="50" cy="52" r="44" fill="#0f172a" stroke="#dc2626" strokeWidth="5" filter="url(#shadow1)"/>
+                      <circle cx="50" cy="52" r="36" fill="#1e293b"/>
+                      <text x="50" y="44" textAnchor="middle" fill="white" fontSize="18" fontWeight="bold" fontStyle="italic" fontFamily="Georgia, serif">Inc.</text>
+                      <text x="50" y="70" textAnchor="middle" fill="#dc2626" fontSize="22" fontWeight="bold" fontFamily="Arial, sans-serif">5000</text>
+                      <text x="50" y="104" textAnchor="middle" fill="#6b7280" fontSize="7" fontFamily="Arial, sans-serif">FASTEST GROWING</text>
+                      <text x="50" y="114" textAnchor="middle" fill="#9ca3af" fontSize="7" fontFamily="Arial, sans-serif">PRIVATE COMPANIES</text>
+                    </svg>
+                  </div>
+                </div>
+
+                {/* NY Design Award Badge */}
+                <div className="group relative hover:scale-105 transition-transform cursor-pointer">
+                  <div className="w-28 h-32 flex flex-col items-center justify-center">
+                    <svg viewBox="0 0 100 120" className="w-full h-full drop-shadow-xl">
+                      <rect x="10" y="6" width="80" height="108" fill="#dc2626" rx="5" filter="url(#shadow1)"/>
+                      <rect x="15" y="11" width="70" height="98" fill="#1e293b" rx="3"/>
+                      <text x="50" y="42" textAnchor="middle" fill="#dc2626" fontSize="30" fontWeight="bold" fontFamily="Arial, sans-serif">NY</text>
+                      <text x="50" y="58" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold" fontFamily="Arial, sans-serif">PRODUCT DESIGN</text>
+                      <text x="50" y="70" textAnchor="middle" fill="white" fontSize="8" fontFamily="Arial, sans-serif">AWARDS</text>
+                      <rect x="30" y="80" width="40" height="16" fill="#fbbf24" rx="3"/>
+                      <text x="50" y="92" textAnchor="middle" fill="#1e293b" fontSize="11" fontWeight="bold" fontFamily="Arial, sans-serif">2024</text>
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Best of CES Badge */}
+                <div className="group relative hover:scale-105 transition-transform cursor-pointer">
+                  <div className="w-28 h-32 flex flex-col items-center justify-center">
+                    <svg viewBox="0 0 100 120" className="w-full h-full drop-shadow-xl">
+                      <defs>
+                        <linearGradient id="cesGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="0%" stopColor="#8b5cf6"/>
+                          <stop offset="100%" stopColor="#5b21b6"/>
+                        </linearGradient>
+                      </defs>
+                      <polygon points="50,6 90,22 90,74 50,106 10,74 10,22" fill="url(#cesGrad)" filter="url(#shadow1)"/>
+                      <polygon points="50,12 84,26 84,70 50,98 16,70 16,26" fill="#4c1d95"/>
+                      <text x="50" y="38" textAnchor="middle" fill="#c4b5fd" fontSize="11" fontWeight="bold" fontFamily="Arial, sans-serif">BEST OF</text>
+                      <text x="50" y="66" textAnchor="middle" fill="white" fontSize="28" fontWeight="bold" fontFamily="Arial, sans-serif">CES</text>
+                      <text x="50" y="88" textAnchor="middle" fill="#c4b5fd" fontSize="14" fontFamily="Arial, sans-serif">2023</text>
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Manifest Badge */}
+                <div className="group relative hover:scale-105 transition-transform cursor-pointer">
+                  <div className="w-28 h-32 flex flex-col items-center justify-center">
+                    <svg viewBox="0 0 100 120" className="w-full h-full drop-shadow-xl">
+                      <defs>
+                        <linearGradient id="manGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="0%" stopColor="#059669"/>
+                          <stop offset="100%" stopColor="#064e3b"/>
+                        </linearGradient>
+                      </defs>
+                      <rect x="10" y="6" width="80" height="108" fill="url(#manGrad)" rx="8" filter="url(#shadow1)"/>
+                      <rect x="15" y="11" width="70" height="98" fill="#022c22" rx="6"/>
+                      <text x="50" y="30" textAnchor="middle" fill="#6ee7b7" fontSize="8" fontFamily="Arial, sans-serif">MOST REVIEWED</text>
+                      <text x="50" y="48" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold" fontFamily="Arial, sans-serif">UX COMPANY</text>
+                      <circle cx="50" cy="70" r="14" fill="#10b981"/>
+                      <path d="M42 70 L47 75 L58 64" stroke="white" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                      <text x="50" y="98" textAnchor="middle" fill="#6ee7b7" fontSize="10" fontFamily="Arial, sans-serif">Manifest 2024</text>
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

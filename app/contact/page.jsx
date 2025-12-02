@@ -4,8 +4,8 @@ import ContactForm from '../components/ContactForm';
 import Icon from '../components/Icon';
 
 export const metadata = {
-  title: 'Contact Us | App Guru',
-  description: 'Get in touch with App Guru. Book a consultation to discuss your digital product needs.',
+  title: 'Contact Us | Lock J Lab',
+  description: 'Get in touch with Lock J Lab. Book a consultation to discuss your digital product needs.',
 };
 
 const contactInfo = [

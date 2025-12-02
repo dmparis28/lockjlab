@@ -4,7 +4,7 @@ import PageHero from '../../components/PageHero';
 import Icon from '../../components/Icon';
 
 export const metadata = {
-  title: 'Software Development Services | App Guru',
+  title: 'Software Development Services | Lock J Lab',
   description: 'Robust, scalable applications built with modern technology stacks. From MVPs to enterprise systems.',
 };
 

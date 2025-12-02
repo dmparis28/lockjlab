@@ -84,7 +84,7 @@ const Header = () => {
             <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center shadow-lg transition-transform group-hover:scale-105">
               <Icon name="Zap" className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-bold text-white">App Guru</span>
+            <span className="text-xl font-bold text-white">Lock J Lab</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -97,32 +97,32 @@ const Header = () => {
               >
                 <Link
                   href={menuLinks[item.key]}
-                  className={`relative px-4 py-2 text-sm font-medium transition-colors ${
+                  className={`relative px-5 py-2 text-base font-medium transition-colors ${
                     activeMenu === item.key ? 'text-white' : 'text-gray-300 hover:text-white'
                   }`}
                 >
-                  <span className="flex items-center gap-1">
+                  <span className="flex items-center gap-1.5">
                     {item.label}
                     <Icon name="ChevronDown" className={`w-4 h-4 transition-transform ${activeMenu === item.key ? 'rotate-180' : ''}`} />
                   </span>
                   {/* Active indicator */}
-                  <div className={`absolute bottom-0 left-4 right-4 h-0.5 bg-sky-500 transition-transform origin-left ${activeMenu === item.key ? 'scale-x-100' : 'scale-x-0'}`} />
+                  <div className={`absolute bottom-0 left-5 right-5 h-0.5 bg-sky-500 transition-transform origin-left ${activeMenu === item.key ? 'scale-x-100' : 'scale-x-0'}`} />
                 </Link>
               </div>
             ))}
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-6">
             <Link
               href="/pricing"
-              className="text-gray-300 hover:text-white text-sm font-medium transition-colors"
+              className="text-gray-300 hover:text-white text-base font-medium transition-colors"
             >
               Pricing
             </Link>
             <Link
               href="/contact"
-              className="bg-gradient-to-r from-sky-600 to-blue-700 text-white font-semibold py-2.5 px-6 rounded-lg transition-all shadow-lg hover:shadow-xl hover:shadow-sky-500/25 border border-sky-500/50 text-sm hover:scale-[1.02] active:scale-[0.98]"
+              className="bg-gradient-to-r from-sky-600 to-blue-700 text-white font-semibold py-2.5 px-6 rounded-lg transition-all shadow-lg hover:shadow-xl hover:shadow-sky-500/25 border border-sky-500/50 text-base hover:scale-[1.02] active:scale-[0.98]"
             >
               Book a Call
             </Link>

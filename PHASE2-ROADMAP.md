@@ -1,4 +1,4 @@
-# App Guru Website - Phase 2 Frontend Roadmap
+# Lock J Lab Website - Phase 2 Frontend Roadmap
 
 ## ✅ Phase 1 Complete (Current State)
 

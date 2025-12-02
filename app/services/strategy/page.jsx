@@ -4,7 +4,7 @@ import PageHero from '../../components/PageHero';
 import Icon from '../../components/Icon';
 
 export const metadata = {
-  title: 'Product Strategy Services | App Guru',
+  title: 'Product Strategy Services | Lock J Lab',
   description: 'Strategic product consulting to define your vision, analyze markets, and create actionable roadmaps for success.',
 };
 

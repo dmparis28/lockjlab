@@ -118,21 +118,24 @@ export default function InteractiveProjectPoster() {
             
             <div 
               onClick={() => setView('form')} 
-              className="group cursor-pointer relative w-full max-w-3xl mx-auto aspect-video rounded-2xl border-2 border-dashed border-white/20 hover:border-sky-500/50 bg-white/5 hover:bg-white/10 transition-all duration-300 flex flex-col items-center justify-center p-8"
+              className="group cursor-pointer relative w-full max-w-4xl mx-auto rounded-2xl border-2 border-dashed border-sky-500/30 hover:border-sky-500/60 bg-[#111827] hover:bg-[#1a2332] transition-all duration-300 flex flex-col items-center justify-center p-16 md:p-24"
             >
-              <svg className="absolute inset-0 w-full h-full rounded-2xl pointer-events-none" aria-hidden="true">
-                <rect width="100%" height="100%" fill="none" rx="16" ry="16" stroke="url(#animated-gradient)" strokeWidth="2" strokeDasharray="10 5" className="animated-dash" />
-                <defs>
-                  <linearGradient id="animated-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#0ea5e9" /><stop offset="100%" stopColor="#8b5cf6" />
-                  </linearGradient>
-                </defs>
-              </svg>
-              <div className="w-20 h-20 rounded-full bg-sky-500/10 border border-sky-500/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Icon name="UploadCloud" className="w-10 h-10 text-sky-400" />
+              {/* Corner accents */}
+              <div className="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-sky-500/50 rounded-tl-2xl" />
+              <div className="absolute top-0 right-0 w-10 h-10 border-t-2 border-r-2 border-sky-500/50 rounded-tr-2xl" />
+              <div className="absolute bottom-0 left-0 w-10 h-10 border-b-2 border-l-2 border-sky-500/50 rounded-bl-2xl" />
+              <div className="absolute bottom-0 right-0 w-10 h-10 border-b-2 border-r-2 border-sky-500/50 rounded-br-2xl" />
+              
+              <div className="w-24 h-24 rounded-full bg-sky-500/10 border border-sky-500/30 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-sky-500/20 group-hover:border-sky-500/50 transition-all">
+                <Icon name="UploadCloud" className="w-12 h-12 text-sky-400" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">Submit Your Project Idea</h3>
-              <p className="text-gray-400">Click here to tell us about your vision</p>
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-sky-400 transition-colors">Submit Your Project Idea</h3>
+              <p className="text-gray-400 text-lg">Click here to tell us about your vision</p>
+              
+              {/* Hover arrow */}
+              <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                <Icon name="ArrowRight" className="w-6 h-6 text-sky-400" />
+              </div>
             </div>
           </div>
         )}

@@ -4,7 +4,7 @@ import PageHero from '../../components/PageHero';
 import Icon from '../../components/Icon';
 
 export const metadata = {
-  title: 'UI/UX Design Services | App Guru',
+  title: 'UI/UX Design Services | Lock J Lab',
   description: 'Beautiful and functional interfaces crafted by expert designers. From prototypes to design systems.',
 };
 
