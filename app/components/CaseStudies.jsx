@@ -1,118 +1,97 @@
 // Filename: app/components/CaseStudies.jsx
-import React from 'react';
 import Link from 'next/link';
+import Icon from './Icon';
 
-const ArrowUpIcon = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" {...props}>
-    <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm.53 5.47a.75.75 0 0 0-1.06 0l-3 3a.75.75 0 1 0 1.06 1.06l1.72-1.72v5.69a.75.75 0 0 0 1.5 0v-5.69l1.72 1.72a.75.75 0 1 0 1.06-1.06l-3-3Z" clipRule="evenodd" />
-  </svg>
-);
+const stats = [
+  { value: '+3637%', label: 'Sessions per User' },
+  { value: '+1305%', label: 'Deposits over $100' },
+  { value: '+2478%', label: 'App Store Rating' },
+  { value: '+890%', label: 'User Retention' },
+  { value: '+1200%', label: 'Revenue Growth' },
+  { value: '45 min', label: 'Presale Sellout' },
+];
 
-const PredictionStrikeLogo = () => (
-  <div className="flex items-center gap-2">
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-yellow-400">
-      <path d="m12 3-9 9 9 9 9-9Z" /><path d="M3 12h18" />
-    </svg>
-    <span className="text-xl font-bold tracking-wider uppercase text-gray-800 dark:text-gray-200">PredictionStrike</span>
-  </div>
-);
-
-const featuredCaseStudy = {
-  companyLogo: <PredictionStrikeLogo />,
-  headline: "How we designed the world's first sports stock exchange.",
-  description: "PredictionStrike came to us to design and build PredictionStrike \"2.0.\" We provided UI/UX design, information architecture, site mapping, responsive design, and front-end development.",
-  imageUrl: 'https://placehold.co/380x780/1A1D23/FFFFFF/png?text=App+UI',
-  link: '/work',
-  launchStats: {
-    period: '2 months after launch',
-    metrics: [
-      { value: '3637%', label: 'average number of sessions per user' },
-      { value: '1305%', label: 'total number of deposits over $100' },
-      { value: '423%', label: 'conversion rate of users from sign up to purchase' },
-      { value: '101%', label: 'average number of deposits per user' },
-      { value: '81%', label: 'number of users with over 30 minute long sessions' },
-      { value: '71%', label: 'number of users with over 60 events per session' },
-    ],
-  },
-};
-
-const CaseStudies = () => {
-  const { companyLogo, headline, description, imageUrl, link, launchStats } = featuredCaseStudy;
-
+export default function CaseStudies() {
   return (
-    <section className="bg-gray-100 dark:bg-gray-950 py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-            Made by Guru
+    <section className="bg-[#0B0F19] py-20 md:py-32 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-sky-900/5 to-transparent" />
+      
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16">
+          <span className="text-sky-400 font-semibold tracking-wider uppercase text-sm">Featured Work</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-4 mb-6">
+            Results That Speak
           </h2>
-          <Link
-            href="/work"
-            className="text-indigo-600 dark:text-indigo-400 font-semibold flex items-center gap-2 group whitespace-nowrap"
-          >
-            See more of our work
-            <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">&rarr;</span>
-          </Link>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            See how we have helped our clients achieve extraordinary outcomes.
+          </p>
         </div>
 
-        {/* Main Case Study Card */}
-        <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl p-8 md:p-12 lg:p-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left Column: Text Content */}
-            <div className="flex flex-col gap-6">
-              {companyLogo}
-              <h3 className="text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
-                {headline}
+        {/* Featured Case Study */}
+        <article className="group relative bg-gradient-to-br from-pink-600/10 to-pink-900/5 rounded-3xl border border-pink-500/20 overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 lg:p-12">
+            {/* Content */}
+            <div className="flex flex-col justify-center">
+              <img
+                src="https://placehold.co/200x60/1e293b/94a3b8?text=PredictionStrike"
+                alt="PredictionStrike"
+                className="h-10 mb-6 opacity-80 w-fit"
+              />
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                The world&apos;s first athlete stock exchange
               </h3>
-              <p className="text-lg leading-8 text-gray-600 dark:text-gray-400">
-                {description}
+              <p className="text-gray-400 text-lg mb-8 leading-relaxed">
+                We designed and developed PredictionStrike 2.0, transforming how fans invest in their favorite athletes. The result? Record-breaking engagement and growth.
               </p>
-              <div className="mt-4">
-                <Link
-                  href={link}
-                  className="inline-block bg-pink-600 text-white font-semibold rounded-lg px-8 py-3 text-center transition-transform hover:scale-105"
-                >
-                  Read the case study <span aria-hidden="true">&rarr;</span>
-                </Link>
-              </div>
+              <Link
+                href="/work"
+                className="inline-flex items-center text-pink-400 hover:text-pink-300 font-semibold transition-colors group/link w-fit"
+              >
+                View Case Study
+                <Icon name="ArrowRight" className="w-5 h-5 ml-2 transition-transform group-hover/link:translate-x-1" />
+              </Link>
             </div>
 
-            {/* Right Column: App Image */}
-            <div className="flex items-center justify-center">
-              <img
-                src={imageUrl}
-                alt="App screenshot"
-                className="rounded-3xl max-h-[500px] object-contain"
-              />
+            {/* Image */}
+            <div className="relative">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-pink-600/20 to-purple-600/20 border border-white/10">
+                <img
+                  src="https://placehold.co/800x600/1e293b/94a3b8?text=PredictionStrike+App"
+                  alt="PredictionStrike App"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
             </div>
           </div>
 
-          {/* Launch Stats Section */}
-          <div className="mt-16 pt-12 border-t border-gray-200 dark:border-gray-700">
-            <h4 className="text-sm font-semibold tracking-widest text-gray-500 dark:text-gray-400 uppercase">
-              {launchStats.period}
-            </h4>
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-              {launchStats.metrics.map((metric) => (
-                <div key={metric.label}>
-                  <div className="flex items-center gap-2">
-                    <ArrowUpIcon className="h-10 w-10 text-green-500" />
-                    <span className="text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      {metric.value}
-                    </span>
+          {/* Stats Bar */}
+          <div className="bg-black/30 border-t border-white/10 px-8 lg:px-12 py-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+              {stats.map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <div className="flex items-center justify-center gap-1 mb-1">
+                    <Icon name="TrendingUp" className="w-4 h-4 text-green-400" />
+                    <span className="text-xl font-bold text-white">{stat.value}</span>
                   </div>
-                  <p className="mt-2 text-base leading-7 text-gray-600 dark:text-gray-400">
-                    {metric.label}
-                  </p>
+                  <span className="text-xs text-gray-400">{stat.label}</span>
                 </div>
               ))}
             </div>
           </div>
+        </article>
+
+        {/* View All CTA */}
+        <div className="text-center mt-12">
+          <Link
+            href="/work"
+            className="inline-flex items-center bg-white/5 hover:bg-white/10 text-white font-medium py-3 px-6 rounded-lg border border-white/10 transition-all group"
+          >
+            View All Case Studies
+            <Icon name="ArrowRight" className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
+          </Link>
         </div>
       </div>
     </section>
   );
-};
-
-export default CaseStudies;
+}

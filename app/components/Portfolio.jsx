@@ -1,94 +1,86 @@
 // Filename: app/components/Portfolio.jsx
-import React from 'react';
 import Link from 'next/link';
+import Icon from './Icon';
 
 const projects = [
   {
-    logo: (
-      <div className="flex items-center gap-2">
-        <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-red-500 rounded-lg flex items-center justify-center">
-          <span className="text-white font-bold text-lg">K</span>
-        </div>
-        <span className="text-xl font-bold text-gray-900 dark:text-white">Kabata</span>
-      </div>
-    ),
-    title: 'An AI-powered smart dumbbell revolutionizing home fitness.',
-    description: 'We partnered with Kabata to design and develop their connected fitness platform, resulting in a sold-out presale within 45 minutes and $2M+ in pre-orders.',
-    imageUrl: 'https://placehold.co/800x600/1e293b/94a3b8?text=Kabata+Dashboard',
-    link: '/work',
+    company: 'Kabata',
+    title: 'AI-powered smart fitness equipment',
+    description: 'We helped Kabata design and launch their connected fitness platform, resulting in a 45-minute presale sellout and over $2M in pre-orders.',
+    image: 'https://placehold.co/600x400/1e293b/94a3b8?text=Kabata',
+    tags: ['Product Strategy', 'UI/UX Design', 'IoT'],
+    color: 'from-orange-600/10 to-orange-900/5',
+    border: 'border-orange-500/20',
+    accent: 'text-orange-400',
   },
   {
-    logo: (
-      <div className="flex items-center gap-2">
-        <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-emerald-600 rounded-lg flex items-center justify-center">
-          <span className="text-white font-bold text-lg">W</span>
-        </div>
-        <span className="text-xl font-bold text-gray-900 dark:text-white">World Wildlife Fund</span>
-      </div>
-    ),
-    title: 'Driving conservation through digital innovation.',
-    description: 'We redesigned WWF\'s digital donation experience, achieving a 30% increase in online contributions and improving user engagement across all platforms.',
-    imageUrl: 'https://placehold.co/800x600/1e293b/94a3b8?text=WWF+Platform',
-    link: '/work',
+    company: 'World Wildlife Fund',
+    title: 'Driving conservation through digital',
+    description: 'We redesigned WWF\'s digital donation experience, creating a seamless journey that increased online contributions by 30%.',
+    image: 'https://placehold.co/600x400/1e293b/94a3b8?text=WWF',
+    tags: ['UI/UX Design', 'Web Development', 'Accessibility'],
+    color: 'from-green-600/10 to-green-900/5',
+    border: 'border-green-500/20',
+    accent: 'text-green-400',
   },
 ];
 
-const Portfolio = () => {
+export default function Portfolio() {
   return (
-    <div className="bg-gray-50 dark:bg-[#0B0F19] py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="mx-auto max-w-2xl text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-            Featured Projects
+    <section className="bg-[#0B0F19] py-20 md:py-32">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <span className="text-sky-400 font-semibold tracking-wider uppercase text-sm">More Projects</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-4">
+            Featured Work
           </h2>
-          <p className="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-400">
-            A selection of our most impactful work across industries.
-          </p>
         </div>
 
-        {/* Projects */}
-        <div className="space-y-20">
+        <div className="space-y-8">
           {projects.map((project, index) => (
-            <article 
-              key={project.title} 
-              className={`group relative isolate flex flex-col gap-8 lg:flex-row ${
-                index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-              }`}
+            <article
+              key={project.company}
+              className={`group bg-gradient-to-br ${project.color} rounded-2xl border ${project.border} overflow-hidden`}
             >
-              <div className={`relative flex-1 ${index % 2 === 1 ? 'lg:order-last' : ''}`}>
-                <div className="flex flex-col justify-center h-full max-w-xl">
-                  {project.logo}
-                  <h3 className="mt-6 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-                    {project.title}
-                  </h3>
-                  <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-400">
-                    {project.description}
-                  </p>
-                  <div className="mt-8">
-                    <Link 
-                      href={project.link} 
-                      className="inline-flex items-center gap-2 rounded-full border border-gray-300 dark:border-gray-700 px-6 py-3 text-sm font-semibold text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group-hover:border-indigo-500"
-                    >
-                      Read the case study
-                      <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">&rarr;</span>
-                    </Link>
+              <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+                {/* Content - alternates sides */}
+                <div className={`flex flex-col justify-center ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-gray-300">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <p className="text-sm text-gray-400 uppercase tracking-wider mb-2">{project.company}</p>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">{project.title}</h3>
+                  <p className="text-gray-400 mb-6 leading-relaxed">{project.description}</p>
+                  
+                  <Link
+                    href="/work"
+                    className={`inline-flex items-center ${project.accent} hover:opacity-80 font-semibold transition-opacity group/link w-fit`}
+                  >
+                    View Case Study
+                    <Icon name="ArrowRight" className="w-5 h-5 ml-2 transition-transform group-hover/link:translate-x-1" />
+                  </Link>
+                </div>
+
+                {/* Image */}
+                <div className={`relative ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                  <div className="aspect-[3/2] rounded-xl overflow-hidden bg-black/20">
+                    <img
+                      src={project.image}
+                      alt={project.company}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
                 </div>
-              </div>
-              <div className="flex-1">
-                <img
-                  src={project.imageUrl}
-                  alt={`Screenshot of the ${project.title} project`}
-                  className="aspect-[4/3] w-full rounded-2xl bg-gray-100 dark:bg-gray-800 object-cover"
-                />
               </div>
             </article>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Portfolio;
+}

@@ -1,79 +1,55 @@
 // Filename: app/components/PageHero.jsx
-import React from 'react';
 import Icon from './Icon';
 
-/**
- * Reusable PageHero component for internal pages
- * Follows the same design language as the main Hero
- * 
- * @param {string} tag - Small tag text above the title (optional)
- * @param {string} title - Main heading text
- * @param {string} titleHighlight - Highlighted portion of title (gradient text)
- * @param {string} description - Subheading description
- * @param {string} icon - Icon name from Icon component (optional)
- * @param {boolean} centered - Center align content (default: true)
- * @param {string} size - 'sm' | 'md' | 'lg' (default: 'md')
- */
-const PageHero = ({ 
+export default function PageHero({ 
   tag, 
   title, 
   titleHighlight, 
   description, 
   icon,
   centered = true,
-  size = 'md',
-  children 
-}) => {
+  size = 'md' // sm, md, lg
+}) {
   const sizeClasses = {
-    sm: {
-      section: 'pt-24 pb-12 md:pt-28 md:pb-16',
-      title: 'text-3xl md:text-4xl',
-      description: 'text-base md:text-lg max-w-2xl',
-    },
-    md: {
-      section: 'pt-28 pb-16 md:pt-32 md:pb-20',
-      title: 'text-4xl md:text-5xl',
-      description: 'text-lg max-w-3xl',
-    },
-    lg: {
-      section: 'pt-32 pb-20 md:pt-40 md:pb-28',
-      title: 'text-5xl md:text-6xl',
-      description: 'text-lg md:text-xl max-w-3xl',
-    },
+    sm: 'py-16 md:py-20',
+    md: 'py-20 md:py-28',
+    lg: 'py-24 md:py-36',
   };
 
-  const classes = sizeClasses[size] || sizeClasses.md;
+  const titleSizes = {
+    sm: 'text-3xl md:text-4xl',
+    md: 'text-4xl md:text-5xl',
+    lg: 'text-4xl md:text-5xl lg:text-6xl',
+  };
 
   return (
-    <section className={`bg-[#0B0F19] ${classes.section} relative overflow-hidden`}>
-      {/* Background Texture */}
+    <section className={`relative bg-[#0B0F19] ${sizeClasses[size]} overflow-hidden`}>
+      {/* Background texture */}
       <div 
-        className="absolute inset-0 z-0 opacity-50"
-        style={{ 
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.03) 1px, transparent 0)`, 
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0)`,
           backgroundSize: '40px 40px'
         }}
       />
-
-      {/* Background Glow */}
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0">
-        <div className="w-[600px] h-[600px] bg-sky-900/20 rounded-full blur-[150px] opacity-70" />
-      </div>
       
-      <div className={`container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 ${centered ? 'text-center' : ''}`}>
+      {/* Background glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-sky-500/10 rounded-full blur-[120px]" />
+      
+      <div className={`container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 relative z-10 ${centered ? 'text-center' : ''}`}>
         {/* Tag */}
         {tag && (
-          <div className={`mb-4 inline-flex items-center bg-gray-800/50 border border-sky-500/30 py-1 px-4 rounded-full text-sm font-medium text-sky-400 backdrop-blur-sm ${centered ? 'mx-auto' : ''}`}>
-            {icon && <Icon name={icon} className="w-4 h-4 mr-2" />}
-            {tag}
+          <div className={`inline-flex items-center gap-2 bg-sky-500/10 border border-sky-500/20 rounded-full px-4 py-2 mb-6 animate-fade-in-up ${centered ? '' : ''}`}>
+            {icon && <Icon name={icon} className="w-4 h-4 text-sky-400" />}
+            <span className="text-sky-400 text-sm font-medium">{tag}</span>
           </div>
         )}
 
         {/* Title */}
-        <h1 className={`${classes.title} font-extrabold text-white mb-6 leading-tight ${centered ? 'mx-auto' : ''}`}>
-          {title}
+        <h1 className={`${titleSizes[size]} font-extrabold text-white leading-tight mb-6 animate-fade-in-up animation-delay-100`}>
+          {title}{' '}
           {titleHighlight && (
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-600">
               {titleHighlight}
             </span>
           )}
@@ -81,20 +57,11 @@ const PageHero = ({
 
         {/* Description */}
         {description && (
-          <p className={`${classes.description} text-gray-400 ${centered ? 'mx-auto' : ''}`}>
+          <p className={`text-lg md:text-xl text-gray-400 animate-fade-in-up animation-delay-200 ${centered ? 'max-w-2xl mx-auto' : 'max-w-2xl'}`}>
             {description}
           </p>
-        )}
-
-        {/* Optional children (CTAs, etc.) */}
-        {children && (
-          <div className={`mt-10 ${centered ? 'flex justify-center' : ''}`}>
-            {children}
-          </div>
         )}
       </div>
     </section>
   );
-};
-
-export default PageHero;
+}

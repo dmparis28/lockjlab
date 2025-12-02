@@ -65,7 +65,7 @@ const principles = [
   {
     icon: 'MessageSquare',
     title: 'Collaborative',
-    description: 'You're a partner, not just a client. We work together at every stage.',
+    description: 'You\'re a partner, not just a client. We work together at every stage.',
   },
   {
     icon: 'ShieldCheck',

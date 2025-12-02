@@ -6,12 +6,12 @@ import Icon from './Icon';
 import Link from 'next/link';
 
 // Grid layout for content items with icons
-const GridContent = ({ content }) => (
+const GridContent = ({ content, menuType, activeSubMenu }) => (
   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
     {content.map((item) => (
-      <a
+      <Link
         key={item.title}
-        href="#"
+        href={item.href || '#'}
         className="flex items-start gap-4 p-4 rounded-lg hover:bg-white/5 transition-colors group"
       >
         <div className="p-2 rounded-lg bg-sky-500/10 border border-sky-500/20">
@@ -23,18 +23,18 @@ const GridContent = ({ content }) => (
           </h4>
           <p className="text-sm text-gray-400 mt-1">{item.description}</p>
         </div>
-      </a>
+      </Link>
     ))}
   </div>
 );
 
 // List layout for content items with images
-const ListContent = ({ content }) => (
+const ListContent = ({ content, menuType }) => (
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
     {content.map((item) => (
-      <a
+      <Link
         key={item.title}
-        href="#"
+        href={item.href || '#'}
         className="group block rounded-lg overflow-hidden bg-white/5 hover:bg-white/10 transition-colors"
       >
         {item.image && (
@@ -52,7 +52,7 @@ const ListContent = ({ content }) => (
           </h4>
           <p className="text-sm text-gray-400 mt-1 line-clamp-2">{item.description}</p>
         </div>
-      </a>
+      </Link>
     ))}
   </div>
 );
@@ -75,7 +75,7 @@ const FeaturedCallout = ({ callout }) => (
   </div>
 );
 
-const SidebarMegaMenu = ({ data, activeSubMenu, onSubMenuEnter }) => {
+const SidebarMegaMenu = ({ data, activeSubMenu, onSubMenuEnter, menuType }) => {
   const currentContent = data.content?.[activeSubMenu] || [];
   const currentCallout = data.callouts?.[activeSubMenu];
 
@@ -88,8 +88,9 @@ const SidebarMegaMenu = ({ data, activeSubMenu, onSubMenuEnter }) => {
             {data.sidebar?.map((item) => {
               const isActive = activeSubMenu === item.id;
               return (
-                <div
+                <Link
                   key={item.id}
+                  href={item.href || '#'}
                   onMouseEnter={() => onSubMenuEnter(item.id)}
                   className={`flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all relative overflow-hidden ${
                     isActive ? 'bg-white/10 text-white' : 'text-gray-400 hover:text-white hover:bg-white/5'
@@ -102,7 +103,7 @@ const SidebarMegaMenu = ({ data, activeSubMenu, onSubMenuEnter }) => {
                   
                   <Icon name={item.icon} className={`w-5 h-5 transition-colors ${isActive ? 'text-sky-400' : ''}`} />
                   <span>{item.name}</span>
-                </div>
+                </Link>
               );
             })}
           </nav>
@@ -117,8 +118,8 @@ const SidebarMegaMenu = ({ data, activeSubMenu, onSubMenuEnter }) => {
             <p className="text-gray-500 italic pt-3">No content available for this section.</p>
           ) : (
             <>
-              {data.layout === 'grid' && <GridContent content={currentContent} />}
-              {data.layout === 'list' && <ListContent content={currentContent} />}
+              {data.layout === 'grid' && <GridContent content={currentContent} menuType={menuType} activeSubMenu={activeSubMenu} />}
+              {data.layout === 'list' && <ListContent content={currentContent} menuType={menuType} />}
             </>
           )}
         </main>
@@ -128,10 +129,10 @@ const SidebarMegaMenu = ({ data, activeSubMenu, onSubMenuEnter }) => {
       {data.footer && currentContent.length > 0 && (
         <div className="mt-10 pt-6 border-t border-white/10 flex justify-between items-center">
           <p className="text-sm text-gray-500">{data.footer.text}</p>
-          <a href="#" className="text-sm font-semibold text-sky-500 hover:text-sky-400 transition-colors group flex items-center">
+          <Link href={data.footer.href || '#'} className="text-sm font-semibold text-sky-500 hover:text-sky-400 transition-colors group flex items-center">
             {data.footer.linkText}
             <Icon name="ArrowRight" className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-          </a>
+          </Link>
         </div>
       )}
     </div>
