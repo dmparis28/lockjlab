@@ -1,6 +1,7 @@
 // Filename: app/components/Footer.jsx
 'use client';
 
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Icon from './Icon';
 
@@ -32,39 +33,63 @@ const socialLinks = [
   { name: 'GitHub', icon: 'Github', href: 'https://github.com' },
 ];
 
-export default function Footer() {
+// Pages that have their own custom CTA - hide the footer CTA on these
+const pagesWithCustomCTA = [
+  '/services/strategy',
+  '/services/design', 
+  '/services/development',
+  '/services',
+  '/work/coinflow',
+  '/work/medibook',
+  '/work/ids-staffing',
+  '/work/ids-express',
+  '/work',
+  '/process',
+  '/pricing',
+  '/contact',
+];
+
+export default function Footer({ hideCTA = false }) {
+  const pathname = usePathname();
+  
+  // Check if current page has its own CTA
+  const pageHasCustomCTA = pagesWithCustomCTA.some(path => pathname === path);
+  const shouldHideCTA = hideCTA || pageHasCustomCTA;
+
   return (
     <footer className="bg-[#0B0F19] border-t border-white/10">
-      {/* CTA Section */}
-      <div className="border-b border-white/10">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-20">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="text-center lg:text-left">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Ready to Build Something Great?
-              </h2>
-              <p className="text-gray-400 text-lg">
-                {"Let's discuss your project and create something amazing together."}
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/contact"
-                className="group bg-gradient-to-r from-sky-600 to-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all flex items-center justify-center shadow-lg hover:shadow-xl hover:shadow-sky-500/25 border border-sky-500/50"
-              >
-                Start Your Project
-                <Icon name="ArrowRight" className="w-5 h-5 ml-3 transition-transform group-hover:translate-x-1" />
-              </Link>
-              <Link
-                href="/work"
-                className="bg-white/5 hover:bg-white/10 text-white font-semibold py-3 px-8 rounded-lg border border-white/10 transition-all flex items-center justify-center"
-              >
-                View Our Work
-              </Link>
+      {/* CTA Section - Only show if page doesn't have custom CTA */}
+      {!shouldHideCTA && (
+        <div className="border-b border-white/10">
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+              <div className="text-center lg:text-left">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  Ready to Build Something Great?
+                </h2>
+                <p className="text-gray-400 text-lg">
+                  {"Let's discuss your project and create something amazing together."}
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/contact"
+                  className="group bg-gradient-to-r from-sky-600 to-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all flex items-center justify-center shadow-lg hover:shadow-xl hover:shadow-sky-500/25 border border-sky-500/50"
+                >
+                  Start Your Project
+                  <Icon name="ArrowRight" className="w-5 h-5 ml-3 transition-transform group-hover:translate-x-1" />
+                </Link>
+                <Link
+                  href="/work"
+                  className="bg-white/5 hover:bg-white/10 text-white font-semibold py-3 px-8 rounded-lg border border-white/10 transition-all flex items-center justify-center"
+                >
+                  View Our Work
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Main Footer */}
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">

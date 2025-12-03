@@ -12,8 +12,8 @@ const contactInfo = [
   {
     icon: 'Mail',
     title: 'Email',
-    content: 'hello@appguru.com',
-    href: 'mailto:hello@appguru.com',
+    content: 'hello@lockjlab.com',
+    href: 'mailto:hello@lockjlab.com',
   },
   {
     icon: 'Phone',

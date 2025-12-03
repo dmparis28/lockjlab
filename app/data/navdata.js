@@ -6,25 +6,25 @@ const allProjects = [
     title: 'Coinflow',
     description: 'Professional cryptocurrency trading dashboard with real-time charts and instant trading.',
     image: 'https://placehold.co/300x200/0d1117/10b981?text=Coinflow',
-    href: '/work'
+    href: '/work/coinflow'
   },
   {
     title: 'MediBook',
     description: 'Modern telehealth platform connecting patients with healthcare providers.',
     image: 'https://placehold.co/300x200/f8fafc/3b82f6?text=MediBook',
-    href: '/work'
+    href: '/work/medibook'
   },
   {
     title: 'Image Detail Specialists',
     description: 'The nation\'s leading collision center staffing solution with 1,000+ reviews.',
     image: 'https://placehold.co/300x200/1e293b/ef4444?text=IDS+Staffing',
-    href: '/work'
+    href: '/work/ids-staffing'
   },
   {
     title: 'IDS Express Car Wash',
     description: 'Membership-driven express car wash platform with easy subscription management.',
     image: 'https://placehold.co/300x200/0891b2/ffffff?text=IDS+Express',
-    href: '/work'
+    href: '/work/ids-express'
   },
 ];
 

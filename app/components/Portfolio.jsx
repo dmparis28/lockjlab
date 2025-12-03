@@ -4,6 +4,18 @@ import Icon from './Icon';
 
 const projects = [
   {
+    company: 'Coinflow',
+    title: 'Professional cryptocurrency trading platform',
+    description: 'We built Coinflow, a comprehensive crypto trading dashboard with real-time market data, portfolio tracking, and instant trading capabilities for both beginners and experienced traders.',
+    image: null,
+    tags: ['Fintech', 'UI/UX Design', 'Web Development'],
+    color: 'from-emerald-600/10 to-emerald-900/5',
+    border: 'border-emerald-500/20',
+    accent: 'text-emerald-400',
+    mockup: 'coinflow',
+    href: '/work/coinflow',
+  },
+  {
     company: 'MediBook',
     title: 'Modern healthcare appointment platform',
     description: 'We built MediBook, a comprehensive telehealth platform connecting patients with healthcare providers. Features include appointment scheduling, video consultations, medical records management, and secure messaging.',
@@ -13,6 +25,7 @@ const projects = [
     border: 'border-blue-500/20',
     accent: 'text-blue-400',
     mockup: 'medibook',
+    href: '/work/medibook',
   },
   {
     company: 'Image Detail Specialists',
@@ -24,6 +37,7 @@ const projects = [
     border: 'border-red-500/20',
     accent: 'text-red-400',
     mockup: 'ids',
+    href: '/work/ids-staffing',
   },
   {
     company: 'IDS Express Car Wash',
@@ -35,6 +49,7 @@ const projects = [
     border: 'border-cyan-500/20',
     accent: 'text-cyan-400',
     mockup: 'idsexpress',
+    href: '/work/ids-express',
   },
 ];
 
@@ -207,7 +222,7 @@ export default function Portfolio() {
                   <p className="text-gray-400 mb-6 leading-relaxed">{project.description}</p>
                   
                   <Link
-                    href="/work"
+                    href={project.href}
                     className={`inline-flex items-center ${project.accent} hover:opacity-80 font-semibold transition-opacity group/link w-fit`}
                   >
                     View Case Study
